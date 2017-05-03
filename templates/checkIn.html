@@ -1,0 +1,23 @@
+    <ion-pane ng-repeat="user in users">
+      <ion-header-bar class="bar-stable">
+      <a ui-sref="login" class="button icon-left ion-chevron-left button-clear button-dark"></a>
+        <h1 class="title">Check In</h1>
+      </ion-header-bar>
+
+      <ion-content class="has-header">
+      </ion-content>
+      <ion-list>
+        <br /><br /><br />
+        <p>What time did you arrive?</p>
+        <input class="inputFields" id="arrivalTime" type="text" />
+        <p>What time are you planning on leaving?</p>
+        <input class="inputFields"type="time"  type="text" />
+        <p>Are you going to be using a laptop today?</p>
+        <ion-radio ng-model="choice" ng-click="laptopList=true">Yes</ion-radio>
+        <ion-radio ng-model="choice" ng-click="laptopList=false">No</ion-radio>
+        <span ng-show="laptopList">Laptop:</span>
+
+        <button ng-click = "laptopUpdate(user)">Submit</button>
+
+      </ion-list>
+    </ion-pane>
